@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+	background-color: rgba(3, 201, 169, 0.3);
+}
+#board {
+	width: 600px;
+	height: 600px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	top: 10px;
+	background-color: white;
+	
+}
+#board div {
+	width: 60px;
+	height: 60px;
+	border: 1px solid transparent;
+	display: inline-block;
+	float: left;
+	margin: 0px;
+	
+}
+.furry {
+	background-image: url(../images/furry.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.coin {
+	background-image: url(../images/coin.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+#score {
+	font-size: 2em;
+	text-align: center;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	color: #333;
+}
+.hidden {
+	display: none;
+}
+.gameOver {
+	margin-top: 15%;
+	text-align: center;
+	font-size: 5em;
+	color: #333;
+}
