@@ -21,9 +21,8 @@ document.addEventListener("DOMContentLoaded", function() {
 		this.board = document.querySelectorAll("#board div");
 		this.score = 0;
 		this.scoreBoard = document.querySelector("#score span");
-		this.interval = setInterval(this.oneMove, 250);
+		this.interval = setInterval(this.oneMove, 240);
 		this.generator();
-
 	}	
 	
 	Game.prototype.generator = function() {
@@ -61,8 +60,8 @@ document.addEventListener("DOMContentLoaded", function() {
 	}
 						
 	Game.prototype.oneMove = function () {
-		console.log(self.furry.direction);
-		console.log(self.furry.x, self.furry.y);
+//		console.log(self.furry.direction);
+//		console.log(self.furry.x, self.furry.y);
 		
 		if (self.furry.direction === "right") {
 			self.furry.x++;
@@ -84,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		
 		if (self.furry.x < 0 || self.furry.x > 9 || self.furry.y < 0 || self.furry.y > 9) {
         document.getElementById("board").classList.add("hidden");
-		clearInterval(self.interval);
+		clearInterval(this.interval);
         document.querySelector(".gameOver").classList.remove("hidden");
 		}
 	}
@@ -95,10 +94,50 @@ document.addEventListener("DOMContentLoaded", function() {
 			this.board[this.coin.x + this.coin.y * 10].classList.remove("coin");
 			this.coin = new Coin;
 			this.score++;
-			this.scoreBoard.innerHTML = this.score;	
+			this.scoreBoard.innerHTML = this.score;
+//			this.levels();
+//			console.log(this.interval);
 //			var coinSound = document.getElementsByTagName("audio")[1];
 //			coinSound.play();
 		}
 	}
-	var startGame = new Game;
+	
+//	Game.prototype.levels = function () {
+//		
+//		let level = this.score;
+//		
+//		switch (level) {
+//			case 1:
+//				this.interval = setInterval(this.oneMove, 500);
+//				break;
+//			case 2:
+//				this.interval = setInterval(this.oneMove, 410);
+//				break;
+//			case 3:
+//				this.interval = setInterval(this.oneMove, 390);
+//				break;
+//			case 4:
+//				this.interval = setInterval(this.oneMove, 270);
+//				break;
+//		}
+//	}
+	
+	function start () {
+		
+		var mariano = document.getElementById("avatarContainer");
+		var gameBody = document.getElementById("gameBody");
+		
+		mariano.addEventListener("click", function(){
+			
+			var startGame = document.getElementById("startGame");
+			startGame.classList.add("hidden");
+			var startGame = new Game;
+			gameBody.classList.remove("hidden");
+			
+		});
+		
+	}
+	start();
+	
+
 });
