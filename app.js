@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
+	
 	var self;
 	
 	var Furry = function(x, y) {
@@ -31,13 +32,10 @@ document.addEventListener("DOMContentLoaded", function() {
 	
 	Game.prototype.soundInit = function(){
 		var sounds = document.querySelectorAll("audio");
-		console.log(sounds);
-
 		this.sounds.finish = sounds[0];
 		this.sounds.coin = sounds[1];
 		this.sounds.coin.volume=1;
 		this.sounds.bg = sounds[2];
-		
 		this.sounds.bg.volume=0.15;
 	}
 	
@@ -71,15 +69,11 @@ document.addEventListener("DOMContentLoaded", function() {
 			} else if (event.keyCode === 40) {
 				self.furry.direction = "down";
 				return;
-			}	
-			//self.oneMove();
+			}
 		});
 	}
 						
 	Game.prototype.oneMove = function () {
-//		console.log(self.furry.direction);
-//		console.log(self.furry.x, self.furry.y);
-		console.log('lululu');
 		
 		if (self.furry.direction === "right") {
 			self.furry.x++;
@@ -115,7 +109,6 @@ document.addEventListener("DOMContentLoaded", function() {
 			this.score++;
 			this.scoreBoard.innerHTML = this.score;
 			this.levels();
-//			console.log(this.interval);
 			this.sounds.coin.currentTime=0;
 			this.sounds.coin.play();
 		}
@@ -126,30 +119,6 @@ document.addEventListener("DOMContentLoaded", function() {
 		var level = this.score;
 		clearInterval(this.interval);
 		this.interval = setInterval(this.oneMove, 300-(level*15));
-//		switch (level) {
-//			case 0:
-//				clearInterval(this.interval);
-//				this.interval = setInterval(this.oneMove, 300);
-//				break;
-//			case 5:
-//				clearInterval(this.interval);
-//				this.interval = setInterval(this.oneMove, 200);
-//				break;
-//			case 15:
-//				clearInterval(this.interval);
-//				this.interval = setInterval(this.oneMove, 150);
-//				break;
-//			case 25:
-//				clearInterval(this.interval);
-//				this.interval = setInterval(this.oneMove, 10);
-//				break;
-//			case 35:
-//				clearInterval(this.interval);
-//				this.interval = setInterval(this.oneMove, 150);
-//				break;
-////			default:
-////				this.interval = setInterval(this.oneMove, 100);
-//		}
 	}
 	
 	function start () {
@@ -173,10 +142,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			var startGame = new Game;
 			gameBody.classList.remove("hidden");
 			
-		});
-		
+		});	
 	}
 	start();
-	
-
 });

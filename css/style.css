@@ -10,22 +10,22 @@ body {
 	color: white;
 }
 #board {
-	width: 650px;
-	height: 650px;
+	width: 350px;
+	height: 350px;
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
-	top: 10px;
+	top: 1vh;
 	background-color: white;
 	
 }
 #board div {
-	width: 65px;
-	height: 65px;
+	width: 35px;
+	height: 35px;
 	border: 1px solid transparent;
 	display: inline-block;
 	float: left;
-	margin: 0px;
+	margin: 0;
 	
 }
 .furry {
@@ -39,11 +39,11 @@ body {
 	background-size: cover;
 }
 #score {
-	font-size: 3em;
+	font-size: 1.5em;
 	text-align: center;
 	margin-top: 1%;
 	margin-bottom: 0;
-	text-shadow: 6px 6px black;
+	text-shadow: 3px 3px black;
 	
 }
 .hidden {
@@ -53,8 +53,8 @@ body {
 	margin-top: 10vh;
 	text-align: center;
 	text-transform: uppercase;
-	font-size: 8em;
-	text-shadow: 12px 10px black;
+	font-size: 4em;
+	text-shadow: 6px 5px black;
 }
 .gameOver h1 {
 	margin-bottom: 1vh;
@@ -70,9 +70,9 @@ body {
 	width: 
 	margin-top: 5%;
 	text-align: center;
-	font-size: 8em;
+	font-size: 4em;
 	font-weight: 900;
-	text-shadow: 12px 10px black;
+	text-shadow: 6px 5px black;
 }
 #avatarContainer {
 	background-image: url(../images/furry.png);
@@ -107,9 +107,9 @@ body {
 	font-size: 2em;
 }
 .naviInfo {
-	text-shadow: 4px 3px black;
+	text-shadow: 3px 2px black;
 	margin-right: 6vw;
-	font-size: 1.8em;
+	font-size: 1em;
 	line-height: 2em;
 	position: absolute;
 	top: 50%;
@@ -118,13 +118,13 @@ body {
 }
 .naviInfo span {
 	font-weight: 900;
-	text-transform: capitalize;
+	text-transform: uppercase;
 }
 .naviinfo p {
 	vertical-align: middle;
 }
 .info {
-	font-size: 1em;
+	font-size: 0.6em;
 	text-shadow: 2px 1px black;
 	top: 96vh;
 	margin-left: 1vw;
