@@ -26,13 +26,19 @@ document.addEventListener("DOMContentLoaded", function() {
 		this.generator();
 		this.control();
 		this.soundInit();
+		this.sounds.bg.play();
 	}	
 	
 	Game.prototype.soundInit = function(){
 		var sounds = document.querySelectorAll("audio");
+		console.log(sounds);
 
 		this.sounds.finish = sounds[0];
 		this.sounds.coin = sounds[1];
+		this.sounds.coin.volume=1;
+		this.sounds.bg = sounds[2];
+		
+		this.sounds.bg.volume=0.15;
 	}
 	
 	Game.prototype.generator = function() {
@@ -117,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	
 	Game.prototype.levels = function () {
 		
-		let level = this.score;
+		var level = this.score;
 		clearInterval(this.interval);
 		this.interval = setInterval(this.oneMove, 300-(level*15));
 //		switch (level) {

@@ -6,6 +6,8 @@ body {
     margin: 0;
     padding: 0;
 	background-color: rgba(3, 201, 169, 0.4);
+	font-family: 'Press Start 2P', Verdana, sans-serif;
+	color: white;
 }
 #board {
 	width: 650px;
@@ -41,9 +43,8 @@ body {
 	text-align: center;
 	margin-top: 1%;
 	margin-bottom: 0;
-	color: white;
 	text-shadow: 6px 6px black;
-	font-family: 'Press Start 2P', Verdana, sans-serif;
+	
 }
 .hidden {
 	display: none;
@@ -51,10 +52,12 @@ body {
 .gameOver {
 	margin-top: 10vh;
 	text-align: center;
+	text-transform: uppercase;
 	font-size: 8em;
-	color: white;
 	text-shadow: 12px 10px black;
-	font-family: 'Press Start 2P', Verdana, sans-serif;
+}
+.gameOver h1 {
+	margin-bottom: 1vh;
 }
 #startGame {
 	position: relative;
@@ -69,9 +72,7 @@ body {
 	text-align: center;
 	font-size: 8em;
 	font-weight: 900;
-	color: white;
 	text-shadow: 12px 10px black;
-	font-family: 'Press Start 2P', Verdana, sans-serif;
 }
 #avatarContainer {
 	background-image: url(../images/furry.png);
@@ -106,18 +107,14 @@ body {
 	font-size: 2em;
 }
 .naviInfo {
-	color: white;
 	text-shadow: 4px 3px black;
-	font-family: 'Press Start 2P', Verdana, sans-serif;
 	margin-right: 6vw;
 	font-size: 1.8em;
 	line-height: 2em;
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-	display: inline-block;
-	
-	
+	display: inline-block;	
 }
 .naviInfo span {
 	font-weight: 900;
@@ -128,11 +125,9 @@ body {
 }
 .info {
 	font-size: 1em;
-	color: white;
 	text-shadow: 2px 1px black;
-	font-family: 'Press Start 2P', Verdana, sans-serif;
 	top: 96vh;
-	margin-right: 1vw;
-	display: block;
+	margin-left: 1vw;
+	display: inline-block;
 	position: fixed;
 }
