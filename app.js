@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-	
 	var self;
 	
 	var Furry = function(x, y) {
@@ -16,14 +15,25 @@ document.addEventListener("DOMContentLoaded", function() {
 	var Game = function() {
 		
 		self = this;
+	
+		this.sounds = [];
 		this.furry = new Furry(0, 0);
 		this.coin = new Coin();
 		this.board = document.querySelectorAll("#board div");
 		this.score = 0;
 		this.scoreBoard = document.querySelector("#score span");
-		this.interval = setInterval(this.oneMove, 240);
+		this.levels();
 		this.generator();
+		this.control();
+		this.soundInit();
 	}	
+	
+	Game.prototype.soundInit = function(){
+		var sounds = document.querySelectorAll("audio");
+
+		this.sounds.finish = sounds[0];
+		this.sounds.coin = sounds[1];
+	}
 	
 	Game.prototype.generator = function() {
 		
@@ -32,7 +42,9 @@ document.addEventListener("DOMContentLoaded", function() {
 		}
 		
 		var furryBox = this.furry.x + this.furry.y * 10;
+		if(this.board[furryBox]!=undefined){
 		this.board[furryBox].classList.add("furry");
+		}
 		
 		var coinBox = this.coin.x + this.coin.y * 10;
 		this.board[coinBox].classList.add("coin");
@@ -41,7 +53,6 @@ document.addEventListener("DOMContentLoaded", function() {
 	Game.prototype.control = function () {
 		
 		document.addEventListener("keydown", function(event){
-		
 			if (event.keyCode === 39) {
 				self.furry.direction = "right";
 				return;
@@ -55,13 +66,14 @@ document.addEventListener("DOMContentLoaded", function() {
 				self.furry.direction = "down";
 				return;
 			}	
-		self.oneMove();
+			//self.oneMove();
 		});
 	}
 						
 	Game.prototype.oneMove = function () {
 //		console.log(self.furry.direction);
 //		console.log(self.furry.x, self.furry.y);
+		console.log('lululu');
 		
 		if (self.furry.direction === "right") {
 			self.furry.x++;
@@ -74,7 +86,6 @@ document.addEventListener("DOMContentLoaded", function() {
 		}
 		
 		self.wall();
-		self.control();
 		self.collision();
 		self.generator();
 	}
@@ -82,9 +93,11 @@ document.addEventListener("DOMContentLoaded", function() {
 	Game.prototype.wall = function () {
 		
 		if (self.furry.x < 0 || self.furry.x > 9 || self.furry.y < 0 || self.furry.y > 9) {
-        document.getElementById("board").classList.add("hidden");
-		clearInterval(this.interval);
-        document.querySelector(".gameOver").classList.remove("hidden");
+			document.getElementById("board").classList.add("hidden");
+			clearInterval(this.interval);
+			this.sounds.finish.currentTime=0;
+			this.sounds.finish.play();
+        	document.querySelector(".gameOver").classList.remove("hidden");
 		}
 	}
 	
@@ -95,37 +108,57 @@ document.addEventListener("DOMContentLoaded", function() {
 			this.coin = new Coin;
 			this.score++;
 			this.scoreBoard.innerHTML = this.score;
-//			this.levels();
+			this.levels();
 //			console.log(this.interval);
-//			var coinSound = document.getElementsByTagName("audio")[1];
-//			coinSound.play();
+			this.sounds.coin.currentTime=0;
+			this.sounds.coin.play();
 		}
 	}
 	
-//	Game.prototype.levels = function () {
-//		
-//		let level = this.score;
-//		
+	Game.prototype.levels = function () {
+		
+		let level = this.score;
+		clearInterval(this.interval);
+		this.interval = setInterval(this.oneMove, 300-(level*15));
 //		switch (level) {
-//			case 1:
-//				this.interval = setInterval(this.oneMove, 500);
+//			case 0:
+//				clearInterval(this.interval);
+//				this.interval = setInterval(this.oneMove, 300);
 //				break;
-//			case 2:
-//				this.interval = setInterval(this.oneMove, 410);
+//			case 5:
+//				clearInterval(this.interval);
+//				this.interval = setInterval(this.oneMove, 200);
 //				break;
-//			case 3:
-//				this.interval = setInterval(this.oneMove, 390);
+//			case 15:
+//				clearInterval(this.interval);
+//				this.interval = setInterval(this.oneMove, 150);
 //				break;
-//			case 4:
-//				this.interval = setInterval(this.oneMove, 270);
+//			case 25:
+//				clearInterval(this.interval);
+//				this.interval = setInterval(this.oneMove, 10);
 //				break;
+//			case 35:
+//				clearInterval(this.interval);
+//				this.interval = setInterval(this.oneMove, 150);
+//				break;
+////			default:
+////				this.interval = setInterval(this.oneMove, 100);
 //		}
-//	}
+	}
 	
 	function start () {
 		
 		var mariano = document.getElementById("avatarContainer");
 		var gameBody = document.getElementById("gameBody");
+		
+		document.addEventListener("keydown", function(event){
+			if (event.keyCode === 32) {
+				var startGame = document.getElementById("startGame");
+				startGame.classList.add("hidden");
+				var startGame = new Game;
+				gameBody.classList.remove("hidden");
+			}
+		});
 		
 		mariano.addEventListener("click", function(){
 			

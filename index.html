@@ -8,33 +8,35 @@
 	<style>
 		@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 	</style>
-<!--
 	<audio>
-		<source src="sounds/Lost-life-sound-effect.mp3" preload="auto">
-		<source src="sounds/Mario-coin-sound.mp3" preload="auto">
+		<source src="sounds/gameover.mp3" preload="auto">
 	</audio>
--->
+	<audio>
+		<source src="sounds/coin.mp3" preload="auto">
+	</audio>
 </head>
 
 <body>
 	
 	<section id="startGame">
 		<h2 class="title">Coin collector</h2>
-		<div id="avatarContainer"></div>
-		<a>
-			<div class="paragraphsContainer">
-				<p class="naviInfo">
-					Use arrows to navigate <span> &#8678 &#8679 &#8681 &#8680</span><br><br><br>Collect as many coins as you can<br><br> and have FUN!
+		<div class="infoContainer">
+			<div id="avatarContainer"></div>
+			<div class="naviInfo">
+				<p>
+					Use arrows to navigate <br><span class="arrows"> &#8678 &#8679 &#8681 &#8680</span>
 				</p>
-				<p class="startGameInfo">
-					Click <span>MARIANO</span> to start the game!
+				<p>
+					Collect as many coins as you can<br> and have FUN!
 				</p>
-				<p class="info">
-					2016 by michalgmazurek
+				<p>
+					Click <span>mariano</span> to start the game!
 				</p>
 			</div>
-		</a>
-		
+		</div>	
+		<p class="info">
+			2016 by michalgmazurek
+		</p>
 	</section>
 	
 	<section id="gameBody" class="hidden">
