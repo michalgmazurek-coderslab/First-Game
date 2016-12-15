@@ -1,54 +1,58 @@
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 	background-color: rgba(3, 201, 169, 0.4);
 	font-family: 'Press Start 2P', Verdana, sans-serif;
 	color: white;
 }
+
 #board {
-	width: 350px;
-	height: 350px;
+	width: 70vh;
+	height: 70vh;
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
 	top: 1vh;
 	background-color: white;
-	
 }
+
 #board div {
-	width: 35px;
-	height: 35px;
+	width: 7vh;
+	height: 7vh;
 	border: 1px solid transparent;
 	display: inline-block;
 	float: left;
 	margin: 0;
-	
 }
+
 .furry {
 	background-image: url(../images/furry.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+
 .coin {
 	background-image: url(../images/coin.png);
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+
 #score {
 	font-size: 1.5em;
 	text-align: center;
 	margin-top: 1%;
 	margin-bottom: 0;
 	text-shadow: 3px 3px black;
-	
 }
+
 .hidden {
 	display: none;
 }
+
 .gameOver {
 	margin-top: 10vh;
 	text-align: center;
@@ -56,9 +60,11 @@ body {
 	font-size: 4em;
 	text-shadow: 6px 5px black;
 }
+
 .gameOver h1 {
 	margin-bottom: 1vh;
 }
+
 #startGame {
 	position: relative;
 	width: 94vw;
@@ -66,14 +72,15 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 }
+
 .title {
-	width: 
-	margin-top: 5%;
+	width: margin-top: 5%;
 	text-align: center;
 	font-size: 4em;
 	font-weight: 900;
 	text-shadow: 6px 5px black;
 }
+
 #avatarContainer {
 	background-image: url(../images/furry.png);
 	width: 30vw;
@@ -87,25 +94,30 @@ body {
 	margin-right: 2vw;
 	z-index: 2;
 }
+
 #avatarContainer:hover {
 	transition: all 0.1s linear 0s;
 	-webkit-filter: grayscale(30%);
-    filter: grayscale(30%);
+	filter: grayscale(30%);
 }
+
 #avatarContainer:active {
 	transition: all 0.1s linear 0s;
 	width: 31vw;
 	height: 57vh;
 }
+
 .infoContainer {
 	height: 55vh;
 	width: 94vw;
 	position: relative;
 }
+
 .arrows {
 	font-weight: 900;
 	font-size: 2em;
 }
+
 .naviInfo {
 	text-shadow: 3px 2px black;
 	margin-right: 6vw;
@@ -114,15 +126,18 @@ body {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-	display: inline-block;	
+	display: inline-block;
 }
+
 .naviInfo span {
 	font-weight: 900;
 	text-transform: uppercase;
 }
+
 .naviinfo p {
 	vertical-align: middle;
 }
+
 .info {
 	font-size: 0.6em;
 	text-shadow: 2px 1px black;
@@ -130,4 +145,32 @@ body {
 	margin-left: 1vw;
 	display: inline-block;
 	position: fixed;
+}
+
+.yourScore {
+	text-shadow: 3px 3px black;
+	font-size: 1em;
+	text-transform: uppercase;
+	margin-top: 10vh;
+	width: 50vw;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+.yourScore .button {
+	width: 15vw;
+	height: 3vw;
+	background-color: white;
+	box-shadow: 3px 3px black;
+	color: black;
+	border-color: transparent;
+}
+.yourScore #nameInput {
+	border-color: transparent;
+	width: 20vw;
+	height: 3vw;
+	box-shadow: 3px 3px black;
+	color: black;
 }

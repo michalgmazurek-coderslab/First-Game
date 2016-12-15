@@ -2,53 +2,40 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>First js game</title>
+	<meta charset="utf-8">
+	<title>First js game</title>
 	<link rel="stylesheet" href="css/style.css">
 	<style>
 		@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 	</style>
 	<audio>
-		<source src="sounds/gameover.mp3" preload="auto">
-	</audio>
+		<source src="sounds/gameover.mp3" preload="auto"> </audio>
 	<audio>
-		<source src="sounds/coin.mp3" preload="auto">
-	</audio>
+		<source src="sounds/coin.mp3" preload="auto"> </audio>
 	<audio loop>
-		<source src="sounds/background.wav" preload="auto">
-	</audio>
+		<source src="sounds/background.wav" preload="auto"> </audio>
 </head>
 
 <body>
-	
 	<section id="startGame">
 		<h2 class="title">Coin collector</h2>
 		<div class="infoContainer">
 			<div id="avatarContainer"></div>
 			<div class="naviInfo">
-				<p>
-					Use arrows to navigate <br><span class="arrows"> &#8678 &#8679 &#8681 &#8680</span>
-				</p>
-				<p>
-					Collect as many coins as you can<br> and have FUN!
-				</p>
-				<p>
-					Click <span>mariano</span> to start the game!
-				</p>
+				<p> Use arrows to navigate
+					<br><span class="arrows"> &#8678 &#8679 &#8681 &#8680</span> </p>
+				<p> Collect as many coins as you can
+					<br> and have FUN! </p>
+				<p> Click <span>mariano</span> or press <span>space</span><br> to start the game! </p>
 			</div>
-		</div>	
+		</div>
 	</section>
-	
 	<section>
-		<p class="info">
-			2016 by michalgmazurek
-		</p>
+		<p class="info"> 2016 by michalgmazurek </p>
 	</section>
-	
 	<section id="gameBody" class="hidden">
 		<div id="score">
-			<h2>SCORE: <span>0</span></h2>
-		</div>
+			<h2>SCORE: <span>0</span></h2> </div>
 		<article id="board">
 			<div></div>
 			<div></div>
@@ -149,14 +136,33 @@
 			<div></div>
 			<div></div>
 			<div></div>
-			<div></div>	
+			<div></div>
 		</article>
 	</section>
-	
 	<div class="gameOver hidden">
-		<h1>game<br>over</h1>
+		<h1>game<br>over</h1> </div>
+	<div class="yourScore hidden">
+		<h2>Your score: <span id="scoreToAdd"></span></h2>
+		<h2>Your name:</h2>
+		<form>
+			<input id="nameInput" style="font-family: 'Press Start 2P', Verdana, sans-serif" type="text" placeholder="Your name...">
+			<input class="button" style="font-family: 'Press Start 2P', Verdana, sans-serif" type="submit" value="Submit score">
+		</form>
+		
 	</div>
 	
-<script src="app.js" type="text/javascript"></script>	
+	<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+	<script>
+	  var config = {
+		apiKey: "AIzaSyDA4iKCR5SrVpqxZg_WlnSD0Z9frZXeFdE",
+		authDomain: "first-game-4ca11.firebaseapp.com",
+		databaseURL: "https://first-game-4ca11.firebaseio.com",
+		storageBucket: "first-game-4ca11.appspot.com",
+		messagingSenderId: "931964505632"
+	  };
+	  firebase.initializeApp(config);
+	</script>
+	<script src="app.js" type="text/javascript"></script>
 </body>
+
 </html>
