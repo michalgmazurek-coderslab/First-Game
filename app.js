@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
 	Game.prototype.addScore = function () {
 		var scoreToAdd = document.getElementById("scoreToAdd");
 		var url = "https://first-game-4ca11.firebaseio.com/";
-		var firebaseRef = new Firebase(url);
+		var firebaseRef = new Firebase("https://first-game-4ca11.firebaseio.com/leaderboard");
 		var submitButton = document.querySelector(".button");
 		
 		scoreToAdd.innerHTML = this.score;
