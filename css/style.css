@@ -101,11 +101,13 @@ body {
 	filter: grayscale(30%);
 }
 
+/*
 #avatarContainer:active {
 	transition: all 0.1s linear 0s;
 	width: 31vw;
 	height: 57vh;
 }
+*/
 
 .infoContainer {
 	height: 55vh;

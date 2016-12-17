@@ -114,8 +114,9 @@ document.addEventListener("DOMContentLoaded", function () {
 		var scoreToAdd = document.getElementById("scoreToAdd");
 		scoreToAdd.innerHTML = this.score;
 		
-		var url = "https://first-game-4ca11.firebaseio.com/";
-		var firebaseRef = new Firebase("https://first-game-4ca11.firebaseio.com/leaderboard");
+//		var database = firebase.database();
+//		var url = "https://first-game-4ca11.firebaseio.com/";
+		var firebaseRef = new Firebase("https://first-game-4ca11.firebaseio.com/scores");
 		var submitButton = document.querySelector(".button");
 		
 		
@@ -123,11 +124,9 @@ document.addEventListener("DOMContentLoaded", function () {
 		    function submitScore() {
 		    	var name = document.getElementById("nameInput").value;
 		    	var score = scoreToAdd;
-		    	firebaseRef.set({
-		    		name: +name
-		    		, score: +score
-		    	});
-		    }
+		    	var dbRefName = firebase.database().ref().child("name");
+		    	}
+		    
 		    submitButton.onclick = submitScore();
 	}
 
