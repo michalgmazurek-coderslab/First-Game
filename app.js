@@ -119,15 +119,13 @@ document.addEventListener("DOMContentLoaded", function () {
 		var firebaseRef = new Firebase("https://first-game-4ca11.firebaseio.com/scores");
 		var submitButton = document.querySelector(".button");
 		
-		
+		function submitScore() {
+			var name = document.getElementById("nameInput").value;
+			var score = scoreToAdd;
+			var dbRefName = firebase.database().ref().child("name");
+		}
 
-		    function submitScore() {
-		    	var name = document.getElementById("nameInput").value;
-		    	var score = scoreToAdd;
-		    	var dbRefName = firebase.database().ref().child("name");
-		    	}
-		    
-		    submitButton.onclick = submitScore();
+		submitButton.onclick = submitScore();
 	}
 
 	function start() {
