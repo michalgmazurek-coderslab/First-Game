@@ -18,7 +18,7 @@
 
 <body>
 	<section id="startGame">
-		<h2 class="title">Coin collector</h2>
+		<h2 class="title">Mariano</h2>
 		<div class="infoContainer">
 			<div id="avatarContainer"></div>
 			<div class="naviInfo">
@@ -146,19 +146,23 @@
 		<h2>Your name:</h2>
 		<form>
 			<input id="nameInput" style="font-family: 'Press Start 2P', Verdana, sans-serif" type="text" placeholder="Your name...">
-			<input class="button" style="font-family: 'Press Start 2P', Verdana, sans-serif" type="submit" value="Submit score">
+			<input id="addScoreBtn" style="font-family: 'Press Start 2P', Verdana, sans-serif" type="submit" value="Submit score">
 		</form>
-		
 	</div>
-	
-	<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+	<section id="topTenSection" class="hidden">
+		<h2>Top 10:</h2>
+		<ul id="topTenScores"></ul>
+	</section>
+
+	<script src="https://www.gstatic.com/firebasejs/3.8.0/firebase.js"></script>
 	<script>
 	  var config = {
-		apiKey: "AIzaSyDA4iKCR5SrVpqxZg_WlnSD0Z9frZXeFdE",
-		authDomain: "first-game-4ca11.firebaseapp.com",
-		databaseURL: "https://first-game-4ca11.firebaseio.com",
-		storageBucket: "first-game-4ca11.appspot.com",
-		messagingSenderId: "931964505632"
+	    apiKey: "AIzaSyDA4iKCR5SrVpqxZg_WlnSD0Z9frZXeFdE",
+	    authDomain: "first-game-4ca11.firebaseapp.com",
+	    databaseURL: "https://first-game-4ca11.firebaseio.com",
+	    projectId: "first-game-4ca11",
+	    storageBucket: "first-game-4ca11.appspot.com",
+	    messagingSenderId: "931964505632"
 	  };
 	  firebase.initializeApp(config);
 	</script>

@@ -1,105 +1,116 @@
 * {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-	margin: 0;
-	padding: 0;
-	background-color: rgba(3, 201, 169, 0.4);
-	font-family: 'Press Start 2P', Verdana, sans-serif;
-	color: white;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(3, 201, 169, 0.4);
+    font-family: 'Press Start 2P', Verdana, sans-serif;
+    color: white;
+}
+
+#gameBody {
+	display: none;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 }
 
 #board {
-	width: 70vh;
-	height: 70vh;
-	position: relative;
-	margin-left: auto;
-	margin-right: auto;
-	top: 1vh;
-	background-color: white;
+    width: 70vh;
+    height: 70vh;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    top: 1vh;
+    background-color: white;
 }
 
 #board div {
-	width: 7vh;
-	height: 7vh;
-	border: 1px solid transparent;
-	display: inline-block;
-	float: left;
-	margin: 0;
+    width: 7vh;
+    height: 7vh;
+    border: 1px solid transparent;
+    display: inline-block;
+    float: left;
+    margin: 0;
 }
 
 .furry {
-	background-image: url(../images/furry.png);
-	background-repeat: no-repeat;
-	background-size: cover;
+    background-image: url(../images/furry.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .coin {
-	background-image: url(../images/coin.png);
-	background-repeat: no-repeat;
-	background-size: cover;
+    background-image: url(../images/coin.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #score {
-	font-size: 1.5em;
-	text-align: center;
-	margin-top: 1%;
-	margin-bottom: 0;
-	text-shadow: 3px 3px black;
+    font-size: 1.5em;
+    text-align: center;
+    margin-top: 1%;
+    margin-bottom: 0;
+    text-shadow: 3px 3px black;
 }
 
 .hidden {
-	display: none;
+    display: none;
 }
 
 .gameOver {
-	margin-top: 10vh;
-	text-align: center;
-	text-transform: uppercase;
-	font-size: 4em;
-	text-shadow: 6px 5px black;
+    margin-top: 10vh;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 4em;
+    text-shadow: 6px 5px black;
 }
 
 .gameOver h1 {
-	margin-bottom: 1vh;
+    margin-bottom: 1vh;
 }
 
 #startGame {
-	position: relative;
-	width: 94vw;
-	height: 20vh;
-	margin-left: auto;
-	margin-right: auto;
+    position: relative;
+    width: 94vw;
+    height: 20vh;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .title {
-	width: margin-top: 5%;
-	text-align: center;
-	font-size: 4em;
-	font-weight: 900;
-	text-shadow: 6px 5px black;
+    width: margin-top: 5%;
+    text-align: center;
+    font-size: 4em;
+    font-weight: 900;
+    text-shadow: 6px 5px black;
 }
 
 #avatarContainer {
-	background-image: url(../images/furry.png);
-	width: 30vw;
-	height: 55vh;
-	background-position: center;
-	background-size: contain;
-	background-repeat: no-repeat;
-	position: relative;
-	float: left;
-	margin-left: 6vw;
-	margin-right: 2vw;
-	z-index: 2;
+    background-image: url(../images/furry.png);
+    width: 30vw;
+    height: 55vh;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: relative;
+    float: left;
+    margin-left: 6vw;
+    margin-right: 2vw;
+    z-index: 2;
 }
 
+
+/*
 #avatarContainer:hover {
 	transition: all 0.1s linear 0s;
 	-webkit-filter: grayscale(30%);
 	filter: grayscale(30%);
 }
+*/
+
 
 /*
 #avatarContainer:active {
@@ -110,69 +121,115 @@ body {
 */
 
 .infoContainer {
-	height: 55vh;
-	width: 94vw;
-	position: relative;
+    height: 55vh;
+    width: 94vw;
+    position: relative;
 }
 
 .arrows {
-	font-weight: 900;
-	font-size: 2em;
+    font-weight: 900;
+    font-size: 2em;
 }
 
 .naviInfo {
-	text-shadow: 3px 2px black;
-	margin-right: 6vw;
-	font-size: 1em;
-	line-height: 2em;
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
-	display: inline-block;
+    text-shadow: 3px 2px black;
+    margin-right: 6vw;
+    font-size: 1em;
+    line-height: 2em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-block;
 }
 
 .naviInfo span {
-	font-weight: 900;
-	text-transform: uppercase;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.4em;
+    text-shadow: 4px 3px black;
 }
 
+
+/*
+.naviInfo span:hover {
+	color: rgb(236, 100, 75);
+}
+*/
+
 .naviinfo p {
-	vertical-align: middle;
+    vertical-align: middle;
 }
 
 .info {
-	font-size: 0.6em;
-	text-shadow: 2px 1px black;
-	top: 96vh;
-	margin-left: 1vw;
-	display: inline-block;
-	position: fixed;
+    font-size: 0.6em;
+    text-shadow: 2px 1px black;
+    top: 96vh;
+    margin-left: 1vw;
+    display: inline-block;
+    position: fixed;
+}
+
+.fadeOut {
+    opacity: 0;
+}
+
+.fadeIn {
+    opacity: 1;
 }
 
 .yourScore {
-	text-shadow: 3px 3px black;
-	font-size: 1em;
-	text-transform: uppercase;
-	margin-top: 10vh;
-	width: 50vw;
-	position: absolute;
-	left: 0;
-	right: 0;
-	margin-left: auto;
-	margin-right: auto;
+    text-shadow: 3px 3px black;
+    font-size: 1em;
+    text-transform: uppercase;
+    margin-top: 10vh;
+    width: 50vw;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 1;
+    -webkit-transition: opacity 3s;
+    -moz-transition: opacity 3s;
+    transition: opacity 3s;
 }
-.yourScore .button {
-	width: 15vw;
-	height: 3vw;
-	background-color: white;
-	box-shadow: 3px 3px black;
-	color: black;
-	border-color: transparent;
+
+.yourScore #addScoreBtn {
+    width: 20vw;
+    height: 6vw;
+    background-color: white;
+    box-shadow: 3px 3px black;
+    color: black;
+    border-color: transparent;
 }
+
 .yourScore #nameInput {
-	border-color: transparent;
-	width: 20vw;
-	height: 3vw;
-	box-shadow: 3px 3px black;
-	color: black;
+    border-color: transparent;
+	margin-bottom: 3vh;
+    width: 40vw;
+    height: 6vw;
+    box-shadow: 3px 3px black;
+    color: black;
+}
+
+#topTenSection {
+	text-shadow: 3px 3px black;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    -webkit-transition: opacity 3s;
+    -moz-transition: opacity 3s;
+    transition: opacity 3s;
+}
+
+#topTenSection li {
+    list-style: none;
+	font-size: 1.5em;
+}
+
+#topTenSection h2 {
+	font-size: 2em;
+    align-self: center;
+	text-shadow: 3px 3px black;
 }
