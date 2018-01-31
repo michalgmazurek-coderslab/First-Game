@@ -1,6 +1,6 @@
 # First-Game
 
-My project: https://michalgmazurek-coderslab.github.io/First-Game/ <br><br><br><br>
+My project: https://michalgmazurek.github.io/First-Game/ <br><br><br><br>
 
 
 
